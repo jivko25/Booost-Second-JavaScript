@@ -16,7 +16,6 @@ export default class Application extends EventEmitter {
 
     this.config = config;
     this.data = {};
-    this.universe;
 
     this.init();
   }
@@ -34,8 +33,8 @@ export default class Application extends EventEmitter {
   async init() {
     // Initiate classes and wait for async operations here.
     const universe = await init();
-    this.universe = universe;
-    console.log(this.universe)
+    this.data = {"data" : universe};
+    console.log(this.data)
 
     this.emit(Application.events.APP_READY);
   }
