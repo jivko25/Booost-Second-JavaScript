@@ -19,10 +19,9 @@ async init(){
         let data = await resposne.json();
         let tempArr = Object.values(await data.results);
         const entitie = new Entity(valueArr[i], tempArr);
-        StarWarsUniverse.entities = finalarr
         finalarr.push(entitie);
     }
-    this.entities = finalarr;
+    this.entitites = finalarr;
     return finalarr;
 }
 };
