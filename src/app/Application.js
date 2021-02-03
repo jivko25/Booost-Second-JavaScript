@@ -1,5 +1,5 @@
 import config from '../config';
-import StarWarsUniverse,{init, fetchMoreData} from './custom/StarWarsUniverse';
+import StarWarsUniverse,{init} from './custom/StarWarsUniverse';
 import EventEmitter from 'eventemitter3';
 
 const EVENTS = {

@@ -32,6 +32,7 @@ export async function init(){
         let data = await resposne.json();
         let tempArr = Object.values(await data.results);
         const entitie = new Entities(valueArr[i], tempArr);
+        StarWarsUniverse.entities = finalarr
         finalarr.push(entitie);
     }
     return finalarr;
