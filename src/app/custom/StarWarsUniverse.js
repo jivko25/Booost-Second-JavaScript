@@ -1,23 +1,10 @@
-// import Entities from './Entities';
+import Entity from './Entity';
 
-class StarWarsUniverse{
+export default class StarWarsUniverse{
     constructor(){
-        this.entities = init();
-        // this.test = test
-
-        // this.init();
+        this.entitites = [];
     }
-
-}
-
-export default class Entities{
-    constructor(name, data){
-        this.name = name;
-        this.data = data;
-    }
-}
-
-export async function init(){
+async init(){
     const valueArr = ["people", "planets", "films", "species", "vehicles", "starships"]
     const resposne = await fetch('https://swapi.booost.bg/api/');
     const data = await resposne.json();
@@ -31,23 +18,11 @@ export async function init(){
         let resposne = await fetch(arr[i]);
         let data = await resposne.json();
         let tempArr = Object.values(await data.results);
-        const entitie = new Entities(valueArr[i], tempArr);
-        StarWarsUniverse.entities = finalarr
+        const entitie = new Entity(valueArr[i], tempArr);
         finalarr.push(entitie);
     }
+    this.entitites = finalarr;
     return finalarr;
 }
+};
 
-// export async function fetchMoreData() {
-//     const importArr = await init();
-//     const arr = [];
-//     for(var i = 0;i<importArr.length; i++){
-//         const finalArr = [];
-//         let resposne = await fetch(importArr[i]);
-//         let data = await resposne.json();
-//         let tempArr = Object.values(await data.results);
-//         const entitie = new Entities(, tempArr);
-//         arr.push(entitie);
-//     }
-//     return arr;
-// }
