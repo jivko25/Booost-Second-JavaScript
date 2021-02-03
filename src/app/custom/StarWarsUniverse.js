@@ -2,7 +2,7 @@ import Entity from './Entity';
 
 export default class StarWarsUniverse{
     constructor(){
-        this.entities = [];
+        this.entitites = [];
     }
 async init(){
     const valueArr = ["people", "planets", "films", "species", "vehicles", "starships"]
