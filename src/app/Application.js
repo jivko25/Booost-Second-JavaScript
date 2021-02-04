@@ -20,10 +20,6 @@ export default class Application extends EventEmitter {
     this.init();
   }
 
-  static get events() {
-    return EVENTS;
-  }
-
   /**
    * Initializes the app.
    * Called when the DOM has loaded. You can initiate your custom classes here
@@ -38,6 +34,10 @@ export default class Application extends EventEmitter {
     console.log(this.data)
 
     this.emit(Application.events.APP_READY);
+  }
+  
+  static get events() {
+    return EVENTS;
   }
 }
 
