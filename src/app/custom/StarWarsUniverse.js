@@ -18,7 +18,7 @@ async init(){
         let resposne = await fetch(arr[i]);
         let data = await resposne.json();
         let tempArr = Object.values(await data.results);
-        const entity = new Entity(valueArr[i], tempArr);
+        const entity = new Entity(valueArr[i], {"data" : tempArr, "count" : tempArr.length});
         finalarr.push(entity);
     }
     this.entities = finalarr;
